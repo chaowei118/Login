@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# Author: Wei Chao
+# Author: Rookie118
 # Purpose: 编写登录接口
 #          Implementing login interface
 
