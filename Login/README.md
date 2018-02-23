@@ -1,1 +1,4 @@
-# Login
+# 001 Login
+## 1. Functional Description
+This project has implemented the function of login. When users enter their usernames and passwords, the program will verify the username and password. If the verification is successful, the program will display the welcome message, if not successful over 3 times, the program will lock the username entered at last.
+## 2. How to run this program
