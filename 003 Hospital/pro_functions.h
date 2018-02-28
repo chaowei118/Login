@@ -1,3 +1,7 @@
+//Author: Rookie118
+//Program's Propose: A medical center's simulation
+//Completion time: 2017-11-08
+
 #ifndef PRO_FUNCTIONS_H_INCLUDED
 #define PRO_FUNCTIONS_H_INCLUDED
 
