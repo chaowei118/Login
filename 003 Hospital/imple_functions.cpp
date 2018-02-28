@@ -298,13 +298,13 @@ void see_doctor(Patient &_pat)
 
 void Load_file(int argc, char *argv[])
 {
-    for(int i = 1; i < argc-1; i++)
+    for(int i = 1; i < argc-1; i++)  //命令行总共有6个参数，第2个到第5个参数为文本文件名
     {
         try
         {
-            load_file(argv[i]);
+            load_file(argv[i]);  //读取文件内容
         }
-        catch(std::string err)
+        catch(std::string err)  //异常处理，防止文件名输错
         {
                 std::cout << "Could not open the file " << argv[i] << " !" <<std::endl;
                 std::cout << "Please input correct file name: ";
