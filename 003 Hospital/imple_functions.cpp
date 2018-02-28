@@ -26,48 +26,48 @@ void load_file(string _filename)
     inFlie.open(_filename);
     if(!inFlie.is_open())
     {
-        throw(string("Invalid file"));
+        throw(string("Invalid file"));  //文件无法正常打开，异常抛出
     }
 
-    string strtemp;
-    int fcomma_pos;
-    int i = 0;
+    string strtemp;  //字符串暂存变量
+    int fcomma_pos;  //文件中第一个逗号位置
+    int i = 0;  //记录读取次数
     int line_count = 0;
-    stringstream sstream;
-    while(getline(inFlie, strtemp))
+    stringstream sstream;  //字符串流变量，起到中转作用
+    while(getline(inFlie, strtemp))  //从文件中读取一行数据存放到strtemp中
     {
 
         ++line_count;
-        int flag_per = strtemp.find('.');
-        if(flag_per == string::npos)
+        int flag_per = strtemp.find('.');  //找到此行字符串的句号位置
+        if(flag_per == string::npos)  //如果没找到句号，则认为此行是无效行
         {
             cout << "This line " << line_count << " of the " << _filename << " is incorrectly! It will be ignored!" << endl;
             continue;
         }
         if(_filename == "Patients.txt")
         {
-            int blank_pos = strtemp.find(' ');
+            int blank_pos = strtemp.find(' ');  //找到此行第一个空格位置
             while(blank_pos != string::npos)
             {
                 strtemp = strtemp.erase(blank_pos, 1);  //将字符串中的空格去掉
                 blank_pos = strtemp.find(' ');
             }
-            int com_pos = strtemp.find(',');
+            int com_pos = strtemp.find(',');  //找到此行第一个逗号的位置
             fcomma_pos = com_pos;
             while(com_pos != string::npos)
             {
                 strtemp = strtemp.replace(com_pos, 1, 1, ' ');  //将字符串中的','用空格代替
                 com_pos = strtemp.find(',');
             }
-            int per_pos = strtemp.find('.');
+            int per_pos = strtemp.find('.');  //找到此行第一个句号的位置
             while(per_pos != string::npos)
             {
                 strtemp = strtemp.replace(per_pos, 1, 1, ' ');  //将字符串中的'.'用空格代替
                 per_pos = strtemp.find('.');
             }
-            sstream << strtemp; //将字符串导入的流中
+            sstream << strtemp;  //将字符串导入到字符串流中
             pat_count++;
-            if(fcomma_pos == 0)
+            if(fcomma_pos == 0)  //没有称呼的人名用空格代替
             {
                 patient[i].Title = ' ';
                 sstream >> patient[i].Name;
@@ -135,7 +135,7 @@ void load_file(string _filename)
     }
     inFlie.close();
 
-    for(int j = 0; j < i; j++)
+    for(int j = 0; j < i; j++)  //输出读取的文件内容
     {
         if(_filename == "Patients.txt")
         {
@@ -163,33 +163,33 @@ void load_file(string _filename)
     }
 }
 
-bool diagnose(Patient &_pat, Doctor &_doc)
+bool diagnose(Patient &_pat, Doctor &_doc)  //诊断函数
 {
-    double dia_probablity;
+    double dia_probablity;  //诊断成功率
     dia_probablity = ((double)_doc.Quality/100.0)*2.0*((double)_pat.Ail_degree/100.0)*((double)(100-ailment[_pat.Ailment-1].Ail_det_com)/100.0);
 
-    srand((unsigned)time(NULL));
-    if((int)(dia_probablity*100) > rand()%100)
+    srand((unsigned)time(NULL));  //按时间产生随机化种子
+    if((int)(dia_probablity*100) > rand()%100)  //按照概率判断诊断是否成功
         return 1;
     else
         return 0;
 
 }
 
-bool tre_success(Ailment &_ail, Doctor &_doc, Patient &_pat)
+bool tre_success(Ailment &_ail, Doctor &_doc, Patient &_pat)  //治疗函数
 {
-    double tre_probablity;
-    if(_ail.Name == ailment[_pat.Ailment-1].Name)
+    double tre_probablity;  //治疗成功率
+    if(_ail.Name == ailment[_pat.Ailment-1].Name)  //判断病人所得疾病和医生诊断疾病是否相同
     {
         tre_probablity = ((double)_doc.Quality/100.0)*2.0*((double)(100-_ail.Ail_tre_com)/100.0);
     }
-    else
+    else  //不相同则治疗成功率减少75%
     {
         tre_probablity = ((double)_doc.Quality/100.0)*2.0*((double)(100-ailment[_pat.Ailment-1].Ail_tre_com)/100.0)*0.25;
     }
 
-    srand((unsigned)time(NULL));
-    if((int)(tre_probablity*100) > rand()%100)
+    srand((unsigned)time(NULL));  //按时间产生随机化种子
+    if((int)(tre_probablity*100) > rand()%100)  //按照概率判断诊断是否成功
         return 1;
     else
         return 0;
@@ -207,14 +207,14 @@ void see_doctor(Patient &_pat)
 
     while(count < doc_count)
     {
-        i = rand()%doc_count;
-        if(_pat.Gender == doctor[i].Gender)
+        i = rand()%doc_count;  //随机选择医生进行诊断
+        if(_pat.Gender == doctor[i].Gender)  //直到病人性别和医生性别相同
         {
             break;
         }
         count++;
     }
-    if(count == doc_count)
+    if(count == doc_count)  //没有相同性别的则无法诊断
     {
         if(_pat.Title == " ")
             outFile << "There is no doctor of the same gender for " << _pat.Name << endl << endl;
@@ -223,9 +223,9 @@ void see_doctor(Patient &_pat)
         return;
     }
 
-    bool flag_dia_successful;
-    bool flag_tre_successful;
-    Ailment guess_ail;
+    bool flag_dia_successful;  //诊断成功标志
+    bool flag_tre_successful;  //治疗成功标志
+    Ailment guess_ail;  //诊断不成功则猜测疾病名
     flag_dia_successful = diagnose(_pat, doctor[i]);
     if(flag_dia_successful)
     {
@@ -238,7 +238,7 @@ void see_doctor(Patient &_pat)
     }
 
     string success;
-    if(flag_dia_successful)
+    if(flag_dia_successful)  //诊断结果输出到文件
     {
        if(flag_tre_successful)
        {
@@ -322,7 +322,7 @@ void goto_hospital(int pat_num)
         for(int i = 0; i < pat_num; i++)
             see_doctor(patient[i]);
     }
-    else
+    else  //防止病人数量输错，并限制接诊人数
     {
         cout << "The number of patients should be greater than 0 and not be greater than " << pat_count <<" !" << endl;
         cout << "Please input correct number: ";
