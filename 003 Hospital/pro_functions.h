@@ -9,26 +9,26 @@
 
 struct Patient
 {
-    std::string Title;
+    std::string Title;  //病人称呼
     std::string Name;
     int Age;
     char Gender;
-    int Ailment;
-    int Ail_degree;
+    int Ailment;  //所得疾病
+    int Ail_degree;  //疾病程度
 };
 
 struct Doctor
 {
     std::string Name;
     char Gender;
-    int Quality;
+    int Quality;  //医生水平
 };
 
 struct Ailment
 {
     std::string Name;
-    int Ail_det_com;
-    int Ail_tre_com;
+    int Ail_det_com;  //疾病诊断复杂度
+    int Ail_tre_com;  //疾病治疗复杂度
     int Treatment;
 };
 
