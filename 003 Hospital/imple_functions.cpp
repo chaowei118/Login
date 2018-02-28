@@ -1,3 +1,7 @@
+//Author: Rookie118
+//Program's Propose: A medical center's simulation
+//Completion time: 2017-11-08
+
 #include "pro_functions.h"
 #include <iostream>
 #include <fstream>
@@ -45,23 +49,23 @@ void load_file(string _filename)
             int blank_pos = strtemp.find(' ');
             while(blank_pos != string::npos)
             {
-                strtemp = strtemp.erase(blank_pos, 1);  //½«×Ö·û´®ÖÐµÄ¿Õ¸ñÈ¥µô
+                strtemp = strtemp.erase(blank_pos, 1);  //å°†å­—ç¬¦ä¸²ä¸­çš„ç©ºæ ¼åŽ»æŽ‰
                 blank_pos = strtemp.find(' ');
             }
             int com_pos = strtemp.find(',');
             fcomma_pos = com_pos;
             while(com_pos != string::npos)
             {
-                strtemp = strtemp.replace(com_pos, 1, 1, ' ');  //½«×Ö·û´®ÖÐµÄ','ÓÃ¿Õ¸ñ´úÌæ
+                strtemp = strtemp.replace(com_pos, 1, 1, ' ');  //å°†å­—ç¬¦ä¸²ä¸­çš„','ç”¨ç©ºæ ¼ä»£æ›¿
                 com_pos = strtemp.find(',');
             }
             int per_pos = strtemp.find('.');
             while(per_pos != string::npos)
             {
-                strtemp = strtemp.replace(per_pos, 1, 1, ' ');  //½«×Ö·û´®ÖÐµÄ'.'ÓÃ¿Õ¸ñ´úÌæ
+                strtemp = strtemp.replace(per_pos, 1, 1, ' ');  //å°†å­—ç¬¦ä¸²ä¸­çš„'.'ç”¨ç©ºæ ¼ä»£æ›¿
                 per_pos = strtemp.find('.');
             }
-            sstream << strtemp; //½«×Ö·û´®µ¼ÈëµÄÁ÷ÖÐ
+            sstream << strtemp; //å°†å­—ç¬¦ä¸²å¯¼å…¥çš„æµä¸­
             pat_count++;
             if(fcomma_pos == 0)
             {
@@ -89,19 +93,19 @@ void load_file(string _filename)
             int blank_pos = strtemp.find(' ');
             while(blank_pos != string::npos)
             {
-                strtemp = strtemp.erase(blank_pos, 1);  //½«×Ö·û´®ÖÐµÄ¿Õ¸ñÈ¥µô
+                strtemp = strtemp.erase(blank_pos, 1);  //å°†å­—ç¬¦ä¸²ä¸­çš„ç©ºæ ¼åŽ»æŽ‰
                 blank_pos = strtemp.find(' ');
             }
             int com_pos = strtemp.find(',');
             while(com_pos != string::npos)
             {
-                strtemp = strtemp.replace(com_pos, 1, 1, ' ');  //½«×Ö·û´®ÖÐµÄ','ÓÃ¿Õ¸ñ´úÌæ
+                strtemp = strtemp.replace(com_pos, 1, 1, ' ');  //å°†å­—ç¬¦ä¸²ä¸­çš„','ç”¨ç©ºæ ¼ä»£æ›¿
                 com_pos = strtemp.find(',');
             }
             int per_pos = strtemp.find('.');
             while(per_pos != string::npos)
             {
-                strtemp = strtemp.replace(per_pos, 1, 1, ' ');  //½«×Ö·û´®ÖÐµÄ'.'ÓÃ¿Õ¸ñ´úÌæ
+                strtemp = strtemp.replace(per_pos, 1, 1, ' ');  //å°†å­—ç¬¦ä¸²ä¸­çš„'.'ç”¨ç©ºæ ¼ä»£æ›¿
                 per_pos = strtemp.find('.');
             }
             sstream << strtemp;
