@@ -11,23 +11,25 @@ doctor.
   
 A summary of what happens to each patient will be passed to whatever file is specified on the command line as the Output-file. 
 Besides, the content of data files will be output in a sensible format.  
-• The patients will be treated on a one by one basis.  
-• Each patient will need to see a randomly chosen doctor of the same gender. If there is no doctor of
+
+- The patients will be treated on a one by one basis.  
+- Each patient will need to see a randomly chosen doctor of the same gender. If there is no doctor of
 the same gender, the patient leaves with their ailment unresolved.  
-• The doctors will attempt to diagnose the correct ailment, with the percentage change of doing. 
+- The doctors will attempt to diagnose the correct ailment, with the percentage change of doing. 
 The percentage is related with the doctor’s quality, the ailment degree, and the ailment determination
 complexity.  
-• If the doctor fails to identify the correct ailment, the doctor will guess at the ailment, equally likely
+- If the doctor fails to identify the correct ailment, the doctor will guess at the ailment, equally likely
 to specify any ailment including the correct one.  
-• If a doctor determines that the patient has a particular ailment they will apply the treatment
+- If a doctor determines that the patient has a particular ailment they will apply the treatment
 associated with that ailment.  
-• The chance of the treatment working will be related with the doctor’s quality and
+- The chance of the treatment working will be related with the doctor’s quality and
 the ailment treatment complexity. If it’s the wrong treatment, the chance of it working will be
 25% of the chance when using the correct treatment.   
-• Once given a treatment the patient leaves, whether the treatment is successful or not.  
+- Once given a treatment the patient leaves, whether the treatment is successful or not.  
 ## 2. File Specification
 If a given data file has an incorrectly formatted line, the problem will be reported and that line will be ignored.
-There are four data files in this program:  
+There are four data files in this program:
+  
 (1) Patients.txt: No more than 100 entries.  
 Title,Name,Age,Gender,Ailment,Ailment degree.  
 Example:  
