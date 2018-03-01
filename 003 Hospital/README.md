@@ -2,11 +2,13 @@
 ## 1. Functional Description
 This program is to be implemented using procedural programming and process
 patients through a medical center. But, this program is not supposed to be a sensible simulation of such a centre, and
-does not comply with typical operating practices for such center.  
+does not comply with typical operating practices for such center.
+  
 The Medical Center runs on a strict quota system, and closes after seeing the number of Patients specified
 as the command argument, or when there are no Patients left to see.
 There is otherwise no sense of time in this program, so it’s possible every patient could see the same
-doctor.  
+doctor.
+  
 A summary of what happens to each patient will be passed to whatever file is specified on the command line as the Output-file. 
 Besides, the content of data files will be output in a sensible format.  
 • The patients will be treated on a one by one basis.  
