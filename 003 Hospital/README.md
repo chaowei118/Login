@@ -26,6 +26,7 @@ associated with that ailment.
 the ailment treatment complexity. If it’s the wrong treatment, the chance of it working will be
 25% of the chance when using the correct treatment.   
 - Once given a treatment the patient leaves, whether the treatment is successful or not.  
+
 ## 2. File Specification
 If a given data file has an incorrectly formatted line, the problem will be reported and that line will be ignored.
 There are four data files in this program:
@@ -75,4 +76,4 @@ Miscelleneous Medicine.
 The Output-file will include the doctor seen, the ailment diagnosed, the treatment, and whether the treatment was successful.
 
 ## 3. How to run this program
-Using CodeBlocks software to open main.cpp, imple_functions.cpp and pro_functions.h, then running it by prompts.
+Using CodeBlocks software to creat a project which includes main.cpp, imple_functions.cpp and pro_functions.h, then building and using command lines to pass arguments for running.

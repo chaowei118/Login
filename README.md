@@ -6,7 +6,7 @@ This repository is created for recording projects I have done. Until 2018-02-25,
 # Project List
 | ID | Title | Difficulty | Language | Version |
 |----|-------|----------- |----------|---------|
-| 001 | Login | Easy | Python | 1.0 |
+| 001 | Easy Login | Easy | Python | 1.0 |
 | 002 | Multiple Menu | Easy | Python | 1.0 |
 | 003 | Hospital Simulation | Medium | C++ | 1.0 |
 | 004 | Football Simulation | Medium | C++ | 1.0 | 
