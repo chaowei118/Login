@@ -1,4 +1,4 @@
-# 004 Football
+# 004 Football Simulation
 ## 1. Functional Description
 This assignment is to be implemented using object oriented programming.
 It involves implementing a simulation of a football tournament between two teams.

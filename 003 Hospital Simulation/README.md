@@ -1,4 +1,4 @@
-# 003 Hospital
+# 003 Hospital Simulation
 ## 1. Functional Description
 This program is to be implemented using procedural programming and process
 patients through a medical center. But, this program is not supposed to be a sensible simulation of such a centre, and
